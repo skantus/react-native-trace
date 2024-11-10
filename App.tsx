@@ -1,35 +1,26 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   useColorScheme,
   View,
 } from 'react-native';
-
 import {
   Colors,
-  DebugInstructions,
   Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Trace from './src/sdk/Trace';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
+function Section({ children, title }: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -62,6 +53,16 @@ function App(): React.JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const onPressInitializeTrace = () => {
+    const apiKey = 'xyz';
+    const enabledDebug = true;
+    Trace.initialize({ apiKey, enabledDebug });
+  }
+
+  const onPressTestTrace = () => {
+    Trace.trace('info', 'Log from js side', { test: 1 })
+  }
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -75,21 +76,23 @@ function App(): React.JSX.Element {
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            justifyContent: 'center', alignContent: 'center'
           }}>
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+
+          <TouchableOpacity style={{ backgroundColor: 'cyan', marginHorizontal: 20, padding: 10, marginTop: 10 }} onPress={onPressInitializeTrace}>
+            <Text style={{ textAlign: 'center' }}>
+              Initialize Trace
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ backgroundColor: 'cyan', marginHorizontal: 20, padding: 10, marginTop: 10 }} onPress={onPressTestTrace}>
+            <Text style={{ textAlign: 'center' }}>
+              Test log trace
+            </Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
