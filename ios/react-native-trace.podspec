@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'react-native-trace'
-  s.version      = '0.1.1'
+  s.version      = '0.1.3'
   s.summary      = 'A React Native module for logging using native Android and iOS code.'
   s.description  = 'A React Native SDK to send logs using native modules for both iOS (Swift) and Android (Kotlin).'
   s.homepage     = 'https://github.com/skantus/react-native-trace'
