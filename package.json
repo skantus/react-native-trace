@@ -1,6 +1,6 @@
 {
   "name": "@skantus/react-native-trace",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Native (trace) Monitoring SDK",
   "main": "index.ts",
   "types": "src/index.ts",
@@ -16,6 +16,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "ios": {
+    "podspecPath": "react-native-trace.podspec"
   },
   "keywords": [
     "react-native",
