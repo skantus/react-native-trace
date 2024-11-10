@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'react-native-trace'
-  s.version      = '0.1.3'
+  s.version      = '0.1.4'
   s.summary      = 'A React Native module for logging using native Android and iOS code.'
   s.description  = 'A React Native SDK to send logs using native modules for both iOS (Swift) and Android (Kotlin).'
   s.homepage     = 'https://github.com/skantus/react-native-trace'
@@ -10,14 +10,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '11.0'
   s.source_files = 'ios/**/*.{swift,m,h}'
   s.swift_version = '5.0'
-
-  # Dependencia de React Native
-  s.dependency 'React-Core'
-
-  # Exponer el módulo LoggerModule.swift a React Native
+  # LoggerModule.swift
   s.public_header_files = 'ios/**/*.{h}'
   s.requires_arc = true
-
-  # Incluye otros frameworks si es necesario (opcional)
-  s.frameworks = 'Foundation'
 end
