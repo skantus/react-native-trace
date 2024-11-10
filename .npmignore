@@ -1,0 +1,8 @@
+node_modules
+android/.gradle
+ios/Pods
+__tests__
+*.log
+tsconfig.json
+*.xcworkspace
+.DS_Store
