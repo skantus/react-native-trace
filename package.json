@@ -1,9 +1,11 @@
 {
   "name": "@skantus/react-native-trace",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React Native (trace) Monitoring SDK",
+  "homepage": "https://github.com/skantus/react-native-trace/blob/main/README.md",
   "main": "index.ts",
   "types": "src/index.ts",
+  "license": "MIT",
   "private": false,
   "scripts": {
     "android": "react-native run-android",
