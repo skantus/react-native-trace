@@ -1,6 +1,6 @@
 {
   "name": "@skantus/react-native-trace",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Native (trace) Monitoring SDK",
   "main": "index.ts",
   "types": "src/index.ts",
